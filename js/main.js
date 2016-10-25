@@ -1,6 +1,27 @@
 (function($) {
     "use strict"; // Start of use strict
 
+
+    $(window).load(function() {
+      // Preloader
+        function preloaderExit() {
+          $(".preloader").fadeOut("slow");
+        };
+        setTimeout(preloaderExit, 1000);
+
+        // show logo after 1.4s
+        function showLogo(){
+          $("#logo").css("visibility","visible");
+        };
+        setTimeout( showLogo, 1550 );
+
+        // Show title after just after logo
+        function showTitle(){
+          $("#title, #desc").addClass("fade-in").css("visibility","visible");
+        };
+        setTimeout( showTitle, 1570 );
+    });
+
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);

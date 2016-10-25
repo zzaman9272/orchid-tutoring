@@ -5,9 +5,24 @@ html, body {
 body {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
+
+/* Preloader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.preloader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../img/preloader.gif) center no-repeat #fff;
+}
+
+/* Hero image */
 header {
   padding-top: 150px;
-  min-height: auto;
+  min-height: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,8 +30,55 @@ header {
   background-position: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/hero-img.jpg);
   color: #fff;
-
 }
-.logo {
-  width: 90px;
+.box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+#logo {
+  width: 170px;
+  visibility: hidden;
+}
+#title {
+  font-size: 50px;
+  letter-spacing: 8px;
+  visibility: hidden;
+}
+#desc {
+  margin-top: 30px;
+  font-weight: 300;
+  visibility: hidden;
+}
+
+/* FadeIn animation */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  /* make things invisible upon start */
+  opacity:0;
+
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  -o-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  -o-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  -o-animation-duration:1s;
+  animation-duration:1s;
 }
