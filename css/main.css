@@ -1,3 +1,4 @@
+/*====== General Styling ======= */
 html, body {
   height: 100%;
   width: 100%;
@@ -5,10 +6,29 @@ html, body {
 body {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
+section {
+  padding: 100px 50px;
+}
+@media screen and (max-width: 700px) {
+  section {
+    padding: 100px 10px;
+  }
+}
+section h2 {
+  margin-bottom: 25px;
+}
+section p {
+  text-align: justify;
+  font-weight: 300;
+}
+
+/* section themes */
+.primary-theme {
+  background-color: #2a2929;
+  color: #fff;
+}
 
 /* Preloader */
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
 .preloader {
 	position: fixed;
 	left: 0px;
@@ -19,7 +39,8 @@ body {
 	background: url(../img/preloader.gif) center no-repeat #fff;
 }
 
-/* Hero image */
+
+/*====== Hero image section ======= */
 header {
   padding-top: 150px;
   min-height: 100%;
@@ -31,6 +52,15 @@ header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/hero-img.jpg);
   color: #fff;
 }
+.bg_pattern {
+    background-image: url(../img/bg_pattern.png);
+    position: absolute;
+    /*opacity: 0.8;*/
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    /*z-index: 1;*/
+}
 .box {
   position: absolute;
   left: 50%;
@@ -39,6 +69,7 @@ header {
   -moz-transform: translate(-50%,-50%);
   -o-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  /*z-index: 2;*/
 }
 #logo {
   width: 170px;
@@ -55,6 +86,17 @@ header {
   visibility: hidden;
 }
 
+
+/*====== About section ======= */
+@media screen and (min-width: 501px) {
+  #tutor {
+        width: 70%;
+  }
+}
+
+
+/*====== Animation ======= */
+
 /* FadeIn animation */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -65,20 +107,9 @@ header {
   /* make things invisible upon start */
   opacity:0;
 
-  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -webkit-animation:fadeIn ease-in 1;
-  -moz-animation:fadeIn ease-in 1;
-  -o-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-
-  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  -o-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
-  -o-animation-duration:1s;
-  animation-duration:1s;
+  /* call our keyframe named fadeIn, use animattion ease-in for 1 second and remain on last keyframe(forwards)*/
+  -webkit-animation: fadeIn 1s ease-in forwards;
+  -moz-animation: fadeIn 1s ease-in forwards;
+  -o-animation: fadeIn 1s ease-in forwards;
+  animation: fadeIn 1s ease-in forwards;
 }
