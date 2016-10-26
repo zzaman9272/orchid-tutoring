@@ -10,7 +10,7 @@
 
     // show logo after 1.4s
     function showLogo(){
-      $("#logo").css("visibility","visible");
+      $("#logo").addClass("fade-in").css("visibility","visible");
     };
     setTimeout( showLogo, 1550 );
 
@@ -40,6 +40,15 @@
   $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
   });
+
+  //trigger tutor pic to become visible
+  $(window).scroll(function() {
+		var imagePos = $("#tutor").offset().top;
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+400) {
+				$("#tutor").addClass("fade-in").css("visibility","visible");
+			}
+	});
 
   // Initialize and Configure Scroll Reveal Animation
   window.sr = ScrollReveal();
