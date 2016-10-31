@@ -11,11 +11,11 @@ section {
 }
 @media screen and (max-width: 700px) {
   section {
-    padding: 100px 10px;
+    padding: 100px 15px;
   }
 }
 section h2 {
-  margin-bottom: 25px;
+  margin-bottom: 70px;
 }
 section p {
   text-align: justify;
@@ -23,7 +23,7 @@ section p {
 }
 
 /* section themes */
-.primary-theme {
+.drk-theme {
   background-color: #2a2929;
   color: #fff;
 }
@@ -106,14 +106,50 @@ header {
 }
 
 
+/*====== Services section ======= */
+.service-icon {
+  width:150px;
+  margin-bottom: 50px;
+}
+.service-icon:hover {
+  animation-name: spin;
+  -webkit-animation-name: spin;
+
+  animation-duration: 1.6s;
+	-webkit-duration: 1.6s;
+}
+@media only screen and (min-width : 768px) {
+  #services p {
+    padding: 0 15px;
+  }
+}
+
+
+/*====== Pricing section ======= */
+.price-box {
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #3d3c3c;
+  color: #fff;
+}
+#pricing h4 {
+  padding: 15px 0;
+  font-weight: 300;
+  letter-spacing: 3px;
+  border-bottom: 1px #fff solid;
+  margin-bottom: 30px
+}
+#pricing span {
+  font-size: 40px
+}
+
+
 /*====== Animation ======= */
 
 /* FadeIn animation */
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
 .fade-in {
   /* make things invisible upon start */
   opacity:0;
@@ -123,4 +159,26 @@ header {
   -moz-animation: fadeIn 1s ease-in forwards;
   -o-animation: fadeIn 1s ease-in forwards;
   animation: fadeIn 1s ease-in forwards;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+
+/* Pulse animation */
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+@-webkit-keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }

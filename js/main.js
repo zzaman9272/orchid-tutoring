@@ -41,14 +41,17 @@
     $('.navbar-toggle:visible').click();
   });
 
-  //trigger tutor pic to become visible
-  $(window).scroll(function() {
-		var imagePos = $("#tutor").offset().top;
-		var topOfWindow = $(window).scrollTop();
-			if (imagePos < topOfWindow+400) {
-				$("#tutor").addClass("fade-in").css("visibility","visible");
-			}
-	});
+// Offset trigger to reveal elements
+  function scrollRevealer(id, offset, animation) {
+    $(window).scroll(function() {
+  		var imagePos = $(id).offset().top;
+  		var topOfWindow = $(window).scrollTop();
+  			if (imagePos < topOfWindow+offset) {
+  				$(id).css("visibility","visible").addClass(animation);
+  			}
+  	});
+  }
+  scrollRevealer("#tutor", 400, "fade-in");
 
   // Initialize and Configure Scroll Reveal Animation
   window.sr = ScrollReveal();
