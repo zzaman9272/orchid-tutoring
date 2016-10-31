@@ -123,18 +123,53 @@ header {
     padding: 0 15px;
   }
 }
+@media only screen and (max-width : 991px) {
+  #services p {
+    margin-bottom: 100px;
+  }
+  #services .service-list div:last-child p{
+    margin-bottom:0;
+  }
+}
 
 
 /*====== Pricing section ======= */
-.price-box {
-  overflow: hidden;
+.price-box-front {
+  position: absolute;
   width: 200px;
   height: 200px;
   margin: 0 auto;
   border-radius: 5px;
   background-color: #3d3c3c;
   color: #fff;
+  -webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
 }
+.price-box-front:hover {
+  -webkit-transform: translateY(-80px);
+	-moz-transform: translateY(-80px);
+	-ms-transform: translateY(-80px);
+	transform: translateY(-80px);
+}
+.price-box-back {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: red;
+  color: #fff;
+}
+@media only screen and (max-width : 991px) {
+  .price-box-back {
+    margin-bottom: 110px;
+  }
+  .price-list div:last-child .price-box-back{
+    margin-bottom:0;
+  }
+}
+
 #pricing h4 {
   padding: 15px 0;
   font-weight: 300;
