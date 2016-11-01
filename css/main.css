@@ -1,4 +1,8 @@
-/*====== General Styling ======= */
+/*
+==============================================
+General Styling
+==============================================
+*/
 html, body {
   height: 100%;
   width: 100%;
@@ -7,12 +11,8 @@ body {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 section {
-  padding: 100px 50px;
-}
-@media screen and (max-width: 700px) {
-  section {
-    padding: 100px 15px;
-  }
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 section h2 {
   margin-bottom: 70px;
@@ -40,7 +40,11 @@ section p {
 }
 
 
-/*====== Hero image section ======= */
+/*
+==============================================
+Hero image section
+==============================================
+*/
 header {
   padding-top: 150px;
   min-height: 100%;
@@ -87,14 +91,13 @@ header {
 }
 
 
-/*====== About section ======= */
+/*
+==============================================
+About Section
+==============================================
+*/
 #tutor {
   visibility: hidden;
-}
-@media screen and (min-width: 501px) {
-  #tutor {
-        width: 70%;
-  }
 }
 #signature {
   width: 130px;
@@ -106,7 +109,11 @@ header {
 }
 
 
-/*====== Services section ======= */
+/*
+==============================================
+Services section
+==============================================
+*/
 .service-icon {
   width:150px;
   margin-bottom: 50px;
@@ -118,22 +125,13 @@ header {
   animation-duration: 1.6s;
 	-webkit-duration: 1.6s;
 }
-@media only screen and (min-width : 768px) {
-  #services p {
-    padding: 0 15px;
-  }
-}
-@media only screen and (max-width : 991px) {
-  #services p {
-    margin-bottom: 100px;
-  }
-  #services .service-list div:last-child p{
-    margin-bottom:0;
-  }
-}
 
 
-/*====== Pricing section ======= */
+/*
+==============================================
+Pricing section
+==============================================
+*/
 .price-box-front {
   position: absolute;
   width: 200px;
@@ -158,18 +156,22 @@ header {
   height: 200px;
   margin: 0 auto;
   border-radius: 5px;
-  background-color: red;
   color: #fff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
 }
-@media only screen and (max-width : 991px) {
-  .price-box-back {
-    margin-bottom: 110px;
-  }
-  .price-list div:last-child .price-box-back{
-    margin-bottom:0;
-  }
+.doodle-1 {
+  background-image: url(../img/doodle-1.png);
 }
-
+.doodle-2 {
+  background-image: url(../img/doodle-2.png);
+}
+.doodle-3 {
+  background-image: url(../img/doodle-3.png);
+}
 #pricing h4 {
   padding: 15px 0;
   font-weight: 300;
@@ -182,7 +184,64 @@ header {
 }
 
 
-/*====== Animation ======= */
+/*
+==============================================
+Testimonials
+==============================================
+*/
+#testimonial-quote .carousel-control {
+    background: none;
+    color: #CACACA;
+    font-size: 2.3em;
+    text-shadow: none;
+    margin-top: 30px;
+}
+#testimonial-quote .carousel-control.left {
+    left: -60px;
+}
+#testimonial-quote .carousel-control.right {
+    right: -60px;
+}
+#testimonial-quote .carousel-indicators {
+    /*bottom: 0px;*/
+}
+#testimonial-quote .carousel-indicators li {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+    border: 4px solid #CCC;
+    border-radius: 50px;
+    opacity: 0.4;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+#testimonial-quote .carousel-indicators .active {
+    background: #333333;
+    border-radius: 100px;
+    border-color: #f33;
+    opacity: 1;
+    overflow: hidden;
+}
+.carousel-inner {
+    min-height: 300px;
+}
+.item blockquote {
+    border-left: none;
+}
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+
+/*
+==============================================
+Animation
+==============================================
+*/
 
 /* FadeIn animation */
 .fade-in {
@@ -216,4 +275,43 @@ header {
     to {
         transform:rotate(360deg);
     }
+}
+
+
+/*
+==============================================
+Media Queries
+==============================================
+*/
+@media screen and (max-width: 700px) {
+  section {
+    padding: 100px 15px;
+  }
+}
+
+@media only screen and (max-width : 991px) {
+  #services p {
+    margin-bottom: 100px;
+  }
+  #services .service-list div:last-child p {
+    margin-bottom:0;
+  }
+  #pricing .price-box-back {
+    margin-bottom: 100px;
+  }
+  #pricing .price-list div:last-child .price-box-back {
+    margin-bottom:0;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  #tutor {
+        width: 360px;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  #services p {
+    padding: 0 15px;
+  }
 }
