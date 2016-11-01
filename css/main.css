@@ -118,13 +118,6 @@ Services section
   width:150px;
   margin-bottom: 50px;
 }
-.service-icon:hover {
-  animation-name: spin;
-  -webkit-animation-name: spin;
-
-  animation-duration: 1.6s;
-	-webkit-duration: 1.6s;
-}
 
 
 /*
@@ -144,12 +137,6 @@ Pricing section
 	-moz-transition: -moz-transform 0.4s;
 	transition: transform 0.4s;
 }
-.price-box-front:hover {
-  -webkit-transform: translateY(-80px);
-	-moz-transform: translateY(-80px);
-	-ms-transform: translateY(-80px);
-	transform: translateY(-80px);
-}
 .price-box-back {
   position: relative;
   width: 200px;
@@ -162,6 +149,12 @@ Pricing section
   -o-background-size: cover;
   background-size: cover;
   background-position: center;
+}
+.price-box-back:hover .price-box-front {
+  -webkit-transform: translateY(-80px);
+	-moz-transform: translateY(-80px);
+	-ms-transform: translateY(-80px);
+	transform: translateY(-80px);
 }
 .doodle-1 {
   background-image: url(../img/doodle-1.png);
@@ -202,26 +195,28 @@ Testimonials
 #testimonial-quote .carousel-control.right {
     right: -60px;
 }
-#testimonial-quote .carousel-indicators {
-    /*bottom: 0px;*/
-}
 #testimonial-quote .carousel-indicators li {
     width: 50px;
     height: 50px;
     margin: 5px;
     cursor: pointer;
-    border: 4px solid #CCC;
-    border-radius: 50px;
     opacity: 0.4;
-    overflow: hidden;
     transition: all 0.4s;
+    position: relative;
 }
 #testimonial-quote .carousel-indicators .active {
-    background: #333333;
-    border-radius: 100px;
-    border-color: #f33;
     opacity: 1;
-    overflow: hidden;
+}
+#testimonial-quote .carousel-indicators .active:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #000;
+  position: absolute;
+  bottom: -20px;
+  left: 13px;
 }
 .carousel-inner {
     min-height: 300px;
@@ -259,7 +254,15 @@ Animation
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
 
-/* Pulse animation */
+/* Spin animation */
+.spin {
+animation-name: spin;
+-webkit-animation-name: spin;
+
+animation-duration: 1.6s;
+-webkit-duration: 1.6s;
+}
+
 @keyframes spin {
     from {
         transform:rotate(0deg);
@@ -283,9 +286,37 @@ Animation
 Media Queries
 ==============================================
 */
+
+@media only screen and (min-width: 508px) and (max-width: 991px) {
+  #testimonial-quote .carousel-indicators {
+    bottom: -20px;
+  }
+}
+
+@media screen and (max-width: 507px) {
+  #testimonial-quote .carousel-indicators {
+    bottom: -60px;
+  }
+}
+
+@media only screen and (max-width : 609px) {
+  #testimonial-quote .carousel-control {
+    visibility: hidden;
+  }
+}
+
 @media screen and (max-width: 700px) {
   section {
     padding: 100px 15px;
+  }
+}
+
+@media only screen and (max-width : 767px) {
+  #pricing .price-box-back {
+    margin-bottom: 100px;
+  }
+  #pricing .price-list div:last-child .price-box-back {
+    margin-bottom:0;
   }
 }
 
@@ -294,12 +325,6 @@ Media Queries
     margin-bottom: 100px;
   }
   #services .service-list div:last-child p {
-    margin-bottom:0;
-  }
-  #pricing .price-box-back {
-    margin-bottom: 100px;
-  }
-  #pricing .price-list div:last-child .price-box-back {
     margin-bottom:0;
   }
 }

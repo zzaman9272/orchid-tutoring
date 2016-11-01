@@ -53,6 +53,22 @@
   }
   scrollRevealer("#tutor", 400, "fade-in");
 
+// Spin animation for service icon
+  $(".service-icon").bind("webkitAnimationEnd mozAnimationEnd animationEnd", function(){
+    $(this).removeClass("spin")
+  });
+  $(".service-icon").hover(function() {
+    $(this).addClass("spin");
+  });
+
+  /* Rise up animation for price box
+  $(".price-box-back").mouseenter(function() {
+    $(".price-box-front").addClass("rise-up");
+  });
+  $(".price-box-back").mouseleave(function(){
+        $(".price-box-front").removeClass("rise-up");
+    });*/
+
   // Initialize and Configure Scroll Reveal Animation
   window.sr = ScrollReveal();
   sr.reveal('.sr-icons', {
