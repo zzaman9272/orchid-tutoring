@@ -23,7 +23,7 @@ section p {
 }
 
 /* section themes */
-.drk-theme {
+#about, #pricing, #contact {
   background-color: #2a2929;
   color: #fff;
 }
@@ -234,6 +234,16 @@ Testimonials
 
 /*
 ==============================================
+Contact
+==============================================
+*/
+.form-control {
+  background-color: #3d3c3c;
+  color: #fff;
+}
+
+/*
+==============================================
 Animation
 ==============================================
 */
@@ -326,6 +336,9 @@ Media Queries
   }
   #services .service-list div:last-child p {
     margin-bottom:0;
+  }
+  #about .container .row {
+    text-align: center;
   }
 }
 
