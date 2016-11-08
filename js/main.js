@@ -19,6 +19,11 @@
       $("#title, #desc").addClass("fade-in").css("visibility","visible");
     };
     setTimeout( showTitle, 1570 );
+
+    //Show pop up message after 7s
+    setTimeout(function(){
+       $('#discount-msg').modal('show');
+   }, 7000);
   });
 
   // jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -61,13 +66,35 @@
     $(this).addClass("spin");
   });
 
-  /* Rise up animation for price box
-  $(".price-box-back").mouseenter(function() {
-    $(".price-box-front").addClass("rise-up");
-  });
-  $(".price-box-back").mouseleave(function(){
-        $(".price-box-front").removeClass("rise-up");
-    });*/
+  // Contact form validator
+  $(function () {
+
+    $('#contact-form').validator();
+
+    $('#contact-form').on('submit', function (e) {
+        if (!e.isDefaultPrevented()) {
+            var url = "contact.php";
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(this).serialize(),
+                success: function (data)
+                {
+                    var messageAlert = 'alert-' + data.type;
+                    var messageText = data.message;
+
+                    var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                    if (messageAlert && messageText) {
+                        $('#contact-form').find('.messages').html(alertBox);
+                        $('#contact-form')[0].reset();
+                    }
+                }
+            });
+            return false;
+        }
+    })
+});
 
   // Initialize and Configure Scroll Reveal Animation
   window.sr = ScrollReveal();

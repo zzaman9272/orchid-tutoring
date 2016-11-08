@@ -246,6 +246,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
+          <h4>Interested in a lesson? Get in touch</h4>
           <form id="contact-form" method="post" action="contact.php" role="form">
             <div class="messages"></div>
 
@@ -253,14 +254,14 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="form_name">Firstname *</label>
+                    <label for="form_name">First Name *</label>
                     <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="form_lastname">Lastname *</label>
+                    <label for="form_lastname">Last Name *</label>
                     <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
                     <div class="help-block with-errors"></div>
                   </div>
@@ -293,13 +294,13 @@
                   </div>
                 </div>
                 <div class="col-md-12">
-                  <input type="submit" class="btn btn-success btn-send" value="Send message">
+                  <p><strong>*</strong> These fields are required.</p>
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-md-12">
-                  <p><strong>*</strong> These fields are required.</p>
+                <div class="col-md-12 text-right">
+                  <input type="submit" class="btn btn-success btn-send" value="Send message">
                 </div>
               </div>
             </div>
@@ -311,10 +312,33 @@
     </div>
   </section>
 
+  <!-- Modal -->
+<div id="discount-msg" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm modal-vertical-centered">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Hi There!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Get 25% off your child's first lesson with our discount code hidden among this page.</p>
+        <p class="hint">Hint: Hover over shapes!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
   <!-- JS files-->
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script src="js/validator.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/main.js"></script>
 

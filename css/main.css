@@ -237,9 +237,37 @@ Testimonials
 Contact
 ==============================================
 */
+#contact h4 {
+  text-align: center;
+  margin-bottom: 40px;
+}
 .form-control {
   background-color: #3d3c3c;
   color: #fff;
+  border-radius: 1px;
+}
+#contact .btn {
+  margin-top: 30px;
+}
+
+
+/*
+==============================================
+Discount Message Modal
+==============================================
+*/
+body.modal-open .modal {
+    display: flex !important;
+    height: 100%;
+}
+
+body.modal-open .modal .modal-dialog {
+    margin: auto;
+}
+
+.modal-body .hint {
+  margin-top: 30px;
+  font-style: italic;;
 }
 
 /*
@@ -303,6 +331,32 @@ Media Queries
   }
 }
 
+@media only screen and (min-width: 977px) and (max-width: 1157px) {
+    #title {
+      font-size: 40px;
+    }
+}
+
+@media screen and (min-width: 501px) {
+  #tutor {
+        width: 360px;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  #services p {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  header .box {
+    padding-top: 80px;
+  }
+  #title {
+    font-size: 40px;
+  }
+}
 @media screen and (max-width: 507px) {
   #testimonial-quote .carousel-indicators {
     bottom: -60px;
@@ -339,17 +393,5 @@ Media Queries
   }
   #about .container .row {
     text-align: center;
-  }
-}
-
-@media screen and (min-width: 501px) {
-  #tutor {
-        width: 360px;
-  }
-}
-
-@media only screen and (min-width : 768px) {
-  #services p {
-    padding: 0 15px;
   }
 }
