@@ -2,28 +2,28 @@
   "use strict"; // Start of use strict
 
   $(window).load(function() {
+
     // Preloader
     function preloaderExit() {
       $(".preloader").fadeOut("slow");
     };
     setTimeout(preloaderExit, 1000);
 
-    // show logo after 1.4s
-    function showLogo(){
-      $("#logo").addClass("fade-in").css("visibility","visible");
+    // FadeIn function
+    function fadeIn(element, time) {
+      setTimeout (
+        function() {
+          $(element).addClass("fade-in").css("visibility","visible");
+        }
+      , time);
     };
-    setTimeout( showLogo, 1550 );
 
-    // Show title after just after logo
-    function showTitle(){
-      $("#title, #desc").addClass("fade-in").css("visibility","visible");
-    };
-    setTimeout( showTitle, 1570 );
+    // Fade in logo
+    fadeIn("#logo", 1550);
 
-    //Show pop up message after 7s
-    setTimeout(function(){
-       $('#discount-msg').modal('show');
-   }, 7000);
+    // Fade in title after logo
+    fadeIn("#title, #desc", 1950);
+
   });
 
   // jQuery for page scrolling feature - requires jQuery Easing plugin
@@ -35,7 +35,7 @@
     event.preventDefault();
   });
 
-  // Highlight the top nav as scrolling occurs
+  // Change bg of the top nav as scrolling occurs
   $('body').scrollspy({
     target: '.navbar-fixed-top',
     offset: 51
@@ -46,7 +46,7 @@
     $('.navbar-toggle:visible').click();
   });
 
-// Offset trigger to reveal elements
+  // Offset trigger to reveal elements
   function scrollRevealer(id, offset, animation) {
     $(window).scroll(function() {
   		var imagePos = $(id).offset().top;
@@ -57,14 +57,6 @@
   	});
   }
   scrollRevealer("#tutor", 400, "fade-in");
-
-// Spin animation for service icon
-  $(".service-icon").bind("webkitAnimationEnd mozAnimationEnd animationEnd", function(){
-    $(this).removeClass("spin")
-  });
-  $(".service-icon").hover(function() {
-    $(this).addClass("spin");
-  });
 
   // Contact form validator
   $(function () {
@@ -95,22 +87,5 @@
         }
     })
 });
-
-  // Initialize and Configure Scroll Reveal Animation
-  window.sr = ScrollReveal();
-  sr.reveal('.sr-icons', {
-    duration: 600,
-    scale: 0.3,
-    distance: '0px'
-  }, 200);
-  sr.reveal('.sr-button', {
-    duration: 1000,
-    delay: 200
-  });
-  sr.reveal('.sr-contact', {
-    duration: 600,
-    scale: 0.3,
-    distance: '0px'
-  }, 300);
 
 })(jQuery); // End of use strict
